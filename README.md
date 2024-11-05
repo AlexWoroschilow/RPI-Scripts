@@ -24,7 +24,6 @@ ACTION=="add", KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", SUBSYSTEM=="block", EN
     RUN{program}+="/usr/bin/systemd-mount --no-block --automount=yes --owner=nobody --collect $devnode /mnt/%k"
 
 ACTION=="remove", KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", \
-    RUN{program}+="/usr/bin/systemd-mount -u --owner=nobody /mnt/%k", \
     RUN+="/usr/bin/rm --dir /mnt/%k"
 
 
