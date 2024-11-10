@@ -27,18 +27,19 @@ ACTION=="add", KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", SUBSYSTEM=="block", EN
     RUN{program}+="/usr/bin/rm --dir --one-file-system --force --verbose /mnt/sd* " , \
     RUN{program}+="/usr/bin/systemd-mount --no-block --automount=yes --bind-device --options=rw,nouser --collect $devnode /mnt/%k" 
 
-    
+```
 
 
 
+#### Bridge mac-address
 
+I could verify that the same bridge name would get a different "stable random" value after doing the operations described in Debian's link:
 
+```
 
-
-
-
-
-
+rm -f /etc/machine-id /var/lib/dbus/machine-id
+dbus-uuidgen --ensure=/etc/machine-id
+dbus-uuidgen --ensure
 
 
 ```
