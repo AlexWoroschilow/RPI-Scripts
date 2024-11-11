@@ -23,9 +23,9 @@ https://wiki.archlinux.org/title/Udev#Mounting_drives_in_rules
 
 ```rules
 
-ACTION=="add", KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", \
-    RUN{program}+="/usr/bin/rm --dir --one-file-system --force --verbose /mnt/sd* " , \
-    RUN{program}+="/usr/bin/systemd-mount --no-block --automount=yes --bind-device --options=rw,nouser --collect $devnode /mnt/%k" 
+ACTION=="add", KERNEL=="sd[a-z][0-9]|sd[a-z]", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", \
+    RUN{program}+="/usr/bin/rm --dir --one-file-system --force --verbose /mnt/sd*", \
+    RUN{program}+="/usr/bin/systemd-mount --owner=nobody --no-block --automount=yes --bind-device --options=rw,nouser --collect $devnode /mnt/%k"
 
 ```
 
