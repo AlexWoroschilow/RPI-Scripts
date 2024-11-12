@@ -60,5 +60,17 @@ ACTION=="add", KERNEL=="eth[1-9]", SUBSYSTEMS=="usb", SUBSYSTEM=="net", ATTR{typ
 
 ```
 
+#### /etc/dhcpcd.conf
+
+disable dhcp on `eth1`
+
+```
+
+denyinterfaces eth0 wlan0 eth1
+
+```
+
+
+
 
 
