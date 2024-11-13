@@ -54,7 +54,6 @@ automatically add usb eth* devices to the bridge with the name `br0`
 ACTION=="add", KERNEL=="eth[1-9]", SUBSYSTEMS=="usb", SUBSYSTEM=="net", ATTR{type}=="1", \
     RUN{program}+="/usr/sbin/ip link set %k down", \
     RUN{program}+="/usr/sbin/ip link set %k master br0", \
-    RUN{program}+="/usr/sbin/ip -4 addr show %k", \
     RUN{program}+="/usr/sbin/ip link set %k up"
 
 
