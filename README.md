@@ -57,6 +57,12 @@ Bridge=br0
 apply the rule with: `systemctl restart systemd-networkd`
 
 
+### Makeing one script
+
+the script will be triggered by the udev and will be long-running.
+https://www.tutorialspoint.com/how-to-run-long-time-process-on-udev-event#:~:text=To%20run%20a%20long%20time,return%20control%20to%20shell%20immediately.
+
+
 
 ### Fix the problem wit non-unique mac-adress of the bridge after the cloning of the SD-Card
 
