@@ -21,6 +21,8 @@ ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="net", ATTR{type}=="1", \
     RUN{program}+="/usr/sbin/ip link set %k master br0"    
 ```
 
+apply the changes with:  `udevadm control --reload-rules && udevadm trigger`
+
 
 ### Disable DHCP for the adapters
 
@@ -33,6 +35,9 @@ change the file: `/etc/dhcpcd.conf`
 denyinterfaces eth0 wlan0 eth1 eth2 eth3 eth4 eth5 eth6 eth7 eth8 eth9
 interface br0
 ```
+apply the changes with: `systemctl restart dhcpcd`
+
+
 
 ### Create systemd-networkd rule
 
@@ -48,6 +53,8 @@ Name=eth1
 Bridge=br0
 
 ```
+apply the rule with: `systemctl restart systemd-networkd`
+
 
 
 ### Fix the problem wit non-unique mac-adress of the bridge after the cloning of the SD-Card
