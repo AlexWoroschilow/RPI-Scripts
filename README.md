@@ -14,6 +14,7 @@ apt-get install -y i2c-tools idle3
 ### Attach the devices to the bridge br0 on plugging
 
 automatically add usb eth* devices to the bridge with the name `br0`
+https://wiki.archlinux.org/title/Network_bridge
 
 ```
 ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="net", ATTR{type}=="1", \
