@@ -102,7 +102,7 @@ ACTION=="add", KERNEL=="sd[a-z][0-9]|sd[a-z]", SUBSYSTEMS=="usb", SUBSYSTEM=="bl
 ### Mount on boot
 
 Name the file according to $YOUR_MOUNT_PATH.mount
-
+https://forum.manjaro.org/t/root-tip-how-to-systemd-mount-unit-samples/1191
 
 ```
 [Unit]
