@@ -99,4 +99,24 @@ ACTION=="add", KERNEL=="sd[a-z][0-9]|sd[a-z]", SUBSYSTEMS=="usb", SUBSYSTEM=="bl
 
 
 
+### Mount on boot
+
+Name the file according to $YOUR_MOUNT_PATH.mount
+
+
+```
+[Unit]
+Description=Mount build partition
+
+[Mount]
+What=/dev/disk/by-uuid/$UUID
+Where=$YOUR_MOUNT_PATH
+Type=ext4
+Options=rw,noatime
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
 
